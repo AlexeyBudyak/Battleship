@@ -5,7 +5,7 @@ import os
 def cls():
     os.system(['cls', 'clear'][os.name == 'posix'])
 
-def show_building(lvl, arr):
+def show_building(lvl, dogs):
     corner = '      ┏'
     for i in range(lvl):
         wall = '      ┃ '
@@ -14,8 +14,8 @@ def show_building(lvl, arr):
         if i == lvl - 1:
             corner = '┃Dogs┃┣'
             wall = '┗┳━━┳┛┃ '
-        if len(arr) >= lvl - i:
-            wall += f"🍖 {arr[lvl-1-i]['food']}% 🐕 {'💩 ' * arr[lvl-1-i]['poop']}{arr[lvl-1-i]['name']}"
+        if len(dogs) >= lvl - i:
+            wall += f"🍖 {dogs[lvl-1-i]['food']}% 🐕 {'💩 ' * dogs[lvl-1-i]['poop']}{dogs[lvl-1-i]['name']}"
         print(corner + '━' * 20)
         print(wall)
     print('━┻━━┻━┻' + '━' * 25)
